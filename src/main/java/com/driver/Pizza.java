@@ -2,33 +2,71 @@ package com.driver;
 
 public class Pizza {
 
-    private int price;
-    private Boolean isVeg;
+    protected int price;
+    protected Boolean isVeg;
     private String bill;
-
+    private int total;
+    protected boolean extraCheeseFlag = true;
+    protected boolean extraToppingFlag = true;
+    private boolean bagTaken = false;
+    private boolean isDeluxe = false;
+    // Constructor for bade Pizza
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
-        // your code goes here
+        if(this.isVeg) this.price = 300;
+        else this.price = 400;
+        this.total += this.price;
+    }
+    // Constructor for Deluxe Pizza
+    public Pizza(Boolean isVeg, int i) {
+        this.isVeg = isVeg;
+        if (isVeg) {
+            this.price = 450;
+        } else {
+            this.price = 500;
+        }
+        this.total += this.price;
+        this.extraCheeseFlag = false;
+        this.extraToppingFlag = false;
+        this.isDeluxe = true;
     }
 
     public int getPrice(){
-        return this.price;
+        return price;
     }
 
     public void addExtraCheese(){
-        // your code goes here
+        if(this.extraCheeseFlag){
+            this.total += 80;
+            this.extraCheeseFlag = false;
+        }
     }
 
     public void addExtraToppings(){
-        // your code goes here
+        if(this.extraToppingFlag){
+            if(this.isVeg) this.total += 70;
+            else this.total += 120;
+            this.extraToppingFlag = false;
+        }
+
     }
 
     public void addTakeaway(){
-        // your code goes here
+        if(!bagTaken){
+            this.total += 20;
+            bagTaken = true;
+        }
     }
 
     public String getBill(){
-        // your code goes here
-        return this.bill;
+        System.out.println("Base Price Of The Pizza:" +this.price);
+        if(!this.extraCheeseFlag && !this.isDeluxe) System.out.println("Extra Cheese Added: 80");
+        if(!this.extraToppingFlag && !this.isDeluxe) {
+            if(this.isVeg) System.out.println("Extra Toppings Added: 70");
+            else System.out.println("Extra Toppings Added: 120");
+        }
+        if(this.bagTaken) System.out.println("Paperbag Added: 20");
+        System.out.println("Total Price: "+this.total);
+        return "";
     }
 }
