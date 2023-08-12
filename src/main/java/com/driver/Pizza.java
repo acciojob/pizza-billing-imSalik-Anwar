@@ -9,7 +9,6 @@ public class Pizza {
     private boolean extraCheeseFlag = true;
     private boolean extraToppingFlag = true;
     private boolean bagTaken = false;
-    private boolean isDeluxe = false;
     // Constructor for bade Pizza
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
@@ -28,7 +27,6 @@ public class Pizza {
         this.total += this.price;
         addExtraCheese();
         addExtraToppings();
-        this.isDeluxe = true;
     }
 
     public int getPrice(){
