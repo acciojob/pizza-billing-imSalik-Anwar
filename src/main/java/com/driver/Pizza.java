@@ -26,9 +26,7 @@ public class Pizza {
             this.price = 400;
         }
         this.total += this.price;
-//        this.extraCheeseFlag = false;
         addExtraCheese();
-//        this.extraToppingFlag = false;
         addExtraToppings();
         this.isDeluxe = true;
     }
@@ -59,28 +57,16 @@ public class Pizza {
             bagTaken = true;
         }
     }
-
-//    public String getBill(){
-//        System.out.println("Base Price Of The Pizza: " +this.price);
-//        if(!this.extraCheeseFlag && !this.isDeluxe) System.out.println("Extra Cheese Added: 80");
-//        if(!this.extraToppingFlag && !this.isDeluxe) {
-//            if(this.isVeg) System.out.println("Extra Toppings Added: 70");
-//            else System.out.println("Extra Toppings Added: 120");
-//        }
-//        if(this.bagTaken) System.out.println("Paperbag Added: 20");
-//        System.out.println("Total Price: "+this.total);
-//        return "";
-//    }
     public String getBill(){
         String res = "";
-        res += "Base Price Of The Pizza: " +this.price +"\n";
-        if(!this.extraCheeseFlag) res += "Extra Cheese Added: 80 \n";
+        res += "Base Price Of The Pizza: "+this.price +"\n";
+        if(!this.extraCheeseFlag) res += "Extra Cheese Added: 80\n";
         if(!this.extraToppingFlag) {
-            if(this.isVeg) res += "Extra Toppings Added: 70 \n";
-            else res += "Extra Toppings Added: 120 \n";
+            if(this.isVeg) res += "Extra Toppings Added: 70\n";
+            else res += "Extra Toppings Added: 120\n";
         }
-        if(this.bagTaken) res += "Paperbag Added: 20 \n";
-        res += "Total Price: "+this.total + "\n";
+        if(this.bagTaken) res += "Paperbag Added: 20\n";
+        res += "Total Price: "+this.total+"\n";
         return res;
     }
 }
