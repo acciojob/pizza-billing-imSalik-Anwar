@@ -21,13 +21,15 @@ public class Pizza {
     public Pizza(Boolean isVeg, int i) {
         this.isVeg = isVeg;
         if (isVeg) {
-            this.price = 450;
+            this.price = 300;
         } else {
-            this.price = 600;
+            this.price = 400;
         }
         this.total += this.price;
-        this.extraCheeseFlag = false;
-        this.extraToppingFlag = false;
+//        this.extraCheeseFlag = false;
+        addExtraCheese();
+//        this.extraToppingFlag = false;
+        addExtraToppings();
         this.isDeluxe = true;
     }
 
@@ -72,8 +74,8 @@ public class Pizza {
     public String getBill(){
         String res = "";
         res += "Base Price Of The Pizza: " +this.price +"\n";
-        if(!this.extraCheeseFlag && !this.isDeluxe) res += "Extra Cheese Added: 80 \n";
-        if(!this.extraToppingFlag && !this.isDeluxe) {
+        if(!this.extraCheeseFlag) res += "Extra Cheese Added: 80 \n";
+        if(!this.extraToppingFlag) {
             if(this.isVeg) res += "Extra Toppings Added: 70 \n";
             else res += "Extra Toppings Added: 120 \n";
         }
