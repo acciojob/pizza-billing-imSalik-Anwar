@@ -2,12 +2,12 @@ package com.driver;
 
 public class Pizza {
 
-    protected int price;
-    protected Boolean isVeg;
+    private int price;
+    private Boolean isVeg;
     private String bill;
     private int total;
-    protected boolean extraCheeseFlag = true;
-    protected boolean extraToppingFlag = true;
+    private boolean extraCheeseFlag = true;
+    private boolean extraToppingFlag = true;
     private boolean bagTaken = false;
     private boolean isDeluxe = false;
     // Constructor for bade Pizza
@@ -21,9 +21,9 @@ public class Pizza {
     public Pizza(Boolean isVeg, int i) {
         this.isVeg = isVeg;
         if (isVeg) {
-            this.price = 450;
-        } else {
             this.price = 500;
+        } else {
+            this.price = 600;
         }
         this.total += this.price;
         this.extraCheeseFlag = false;
