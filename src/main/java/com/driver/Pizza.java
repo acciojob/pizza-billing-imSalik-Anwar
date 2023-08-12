@@ -59,7 +59,7 @@ public class Pizza {
     }
 
     public String getBill(){
-        System.out.println("Base Price Of The Pizza:" +this.price);
+        System.out.println("Base Price Of The Pizza: " +this.price);
         if(!this.extraCheeseFlag && !this.isDeluxe) System.out.println("Extra Cheese Added: 80");
         if(!this.extraToppingFlag && !this.isDeluxe) {
             if(this.isVeg) System.out.println("Extra Toppings Added: 70");
