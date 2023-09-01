@@ -9,7 +9,7 @@ public class Pizza {
     private boolean extraCheeseFlag = true;
     private boolean extraToppingFlag = true;
     private boolean bagTaken = false;
-    // Constructor for bade Pizza
+    // Constructor for base Pizza
     public Pizza(Boolean isVeg){
         this.isVeg = isVeg;
         if(this.isVeg) this.price = 300;
